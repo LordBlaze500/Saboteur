@@ -2,7 +2,6 @@
 config.code-workspace
 
 client/node_modules/
-client/ts-build/
 client/yarn-error.log
 engine/node_modules/
 server/node_modules/
