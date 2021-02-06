@@ -4,4 +4,6 @@ const actionTypes = {
     TEST_ACTION_FAILURE: 'TEST_ACTION_FAILURE',
 }
 
+Object.freeze(actionTypes);
+
 export default actionTypes;

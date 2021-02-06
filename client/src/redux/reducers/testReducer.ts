@@ -4,7 +4,15 @@ const defaultState = {
     testField: 'abcde'
 }
 
-export default function(state = defaultState, action) {
+interface IAction {
+    type: string,
+}
+
+interface IState {
+    testField: string,
+}
+
+export default function(state : IState = defaultState, action : IAction) : IState {
     switch (action.type) {
         case actionTypes.TEST_ACTION_SUCCESS: {
             return { ...state, testField: 'success' }

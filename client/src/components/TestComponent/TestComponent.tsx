@@ -1,9 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import actionTypes from '../../redux/actionTypes';
+import { dispatchType } from '../../redux/store';
 
-export class TestComponent extends React.PureComponent {
-    render() {
+interface Props {
+    testAction: () => void,
+}
+
+export class TestComponent extends React.PureComponent<Props> {
+    render() : JSX.Element {
         const { testAction } = this.props;
 
         return <div>
@@ -12,7 +17,7 @@ export class TestComponent extends React.PureComponent {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch : dispatchType) => {
     return {
         testAction: () => {
             dispatch({ type: actionTypes.TEST_ACTION })

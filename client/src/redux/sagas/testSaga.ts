@@ -2,14 +2,18 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import actionTypes from '../actionTypes';
 import axios from 'axios';
 
-function testApiCall() {
-    return axios.post('http://127.0.0.1:3000/', { testData: 'xxx' });
+interface response {
+   a: number,
 }
 
-function* testSagaFunction(action) {
+const testApiCall = async () : Promise<response> => {
+   const response = await axios.post('http://127.0.0.1:3000/', { testData: 'xxx' });
+   return response.data;
+}
+
+function* testSagaFunction() {
     try {
        const response = yield call(testApiCall);
-       console.log(response);
        yield put({type: actionTypes.TEST_ACTION_SUCCESS});
     } catch (e) {
        yield put({type: actionTypes.TEST_ACTION_FAILURE});
