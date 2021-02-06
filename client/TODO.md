@@ -1,0 +1,10 @@
+ - install webpack, eslint, jest, enzyme, cypress
+ - prepare pipeline steps
+ - favicon
+ - manifest
+ - scss
+ - typescript
+ - vue
+ - babel
+ - changelog
+ - GIT

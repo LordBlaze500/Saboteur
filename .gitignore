@@ -1,0 +1,10 @@
+.vscode/
+config.code-workspace
+
+client/node_modules/
+engine/node_modules/
+server/node_modules/
+
+client/dist/
+engine/dist/
+server/dist/
