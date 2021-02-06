@@ -1,25 +1,21 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga/effects';
 import actionTypes from '../actionTypes';
-import axios from 'axios';
+import socket from '../socket';
+import store from '../store';
 
-interface response {
-   a: number,
+socket.on('TEST_ACTION_SUCCESS', (data : string) => {
+   store.dispatch({
+      type: actionTypes.TEST_ACTION_SUCCESS,
+      payload: data
+   })
+})
+
+function* testSagaFunction(action : Object) {
+   console.log('TEST SAGA');
+   console.log(action);
+   socket.emit(action.type, action.payload);
 }
-
-const testApiCall = async () : Promise<response> => {
-   const response = await axios.post('http://127.0.0.1:3000/', { testData: 'xxx' });
-   return response.data;
-}
-
-function* testSagaFunction() {
-    try {
-       const response = yield call(testApiCall);
-       yield put({type: actionTypes.TEST_ACTION_SUCCESS});
-    } catch (e) {
-       yield put({type: actionTypes.TEST_ACTION_FAILURE});
-    }
- }
 
 export default function* testSaga() {
-    yield takeEvery(actionTypes.TEST_ACTION, testSagaFunction);
-  }
+   yield takeEvery(actionTypes.TEST_ACTION, testSagaFunction);
+}

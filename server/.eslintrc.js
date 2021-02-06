@@ -30,7 +30,7 @@ module.exports = {
         "@typescript-eslint/semi": ["error"],
         "no-return-await": "off",
         "object-curly-spacing": "off",
-        "@typescript-eslint/object-curly-spacing": ["error"],
+        "@typescript-eslint/object-curly-spacing": ["error", "always"],
         "@typescript-eslint/prefer-as-const": "error",
         "@typescript-eslint/return-await": "error",
         "@typescript-eslint/prefer-for-of": "error",
@@ -47,6 +47,7 @@ module.exports = {
         "dot-notation": "off",
         "@typescript-eslint/dot-notation": ["error"],
         "comma-dangle": "off",
-        "@typescript-eslint/comma-dangle": ["error"]
+        "@typescript-eslint/comma-dangle": ["error"],
+        '@typescript-eslint/no-var-requires': 0,
     }
 }

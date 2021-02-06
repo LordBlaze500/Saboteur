@@ -20,7 +20,7 @@ export class TestComponent extends React.PureComponent<Props> {
 const mapDispatchToProps = (dispatch : dispatchType) => {
     return {
         testAction: () => {
-            dispatch({ type: actionTypes.TEST_ACTION })
+            dispatch({ type: actionTypes.TEST_ACTION, payload: '' })
         }
     }
 }
