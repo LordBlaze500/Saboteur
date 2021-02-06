@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import TestComponent from '../TestComponent/TestComponent.jsx';
 
 export class MainView extends React.PureComponent {
     render() {
@@ -8,6 +9,7 @@ export class MainView extends React.PureComponent {
         return <div>
             Main View Here
             <span>{testFieldProp}</span>
+            <TestComponent />
         </div>
     }
 }
