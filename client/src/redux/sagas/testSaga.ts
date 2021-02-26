@@ -1,5 +1,5 @@
 import { takeEvery } from 'redux-saga/effects';
-import actionTypes from '../actionTypes';
+import actionTypes, { ActionType } from '../actionTypes';
 import socket from '../socket';
 import store from '../store';
 
@@ -10,7 +10,7 @@ socket.on('TEST_ACTION_SUCCESS', (data : string) => {
    })
 })
 
-function* testSagaFunction(action : Object) {
+function* testSagaFunction(action : ActionType) {
    console.log('TEST SAGA');
    console.log(action);
    socket.emit(action.type, action.payload);

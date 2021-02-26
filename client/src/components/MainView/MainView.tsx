@@ -1,10 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import TestComponent from '../TestComponent/TestComponent';
-import { storeType } from '../../redux/store';
+import { MainWrapper, OptionsWrapper, PlayersListWrapper, ChatWrapper } from './MainView.sc';
+import PlayersList from '../PlayersList/PlayersList';
 
 interface Props {
-    testFieldProp: string,
+    
 }
 
 export class MainView extends React.PureComponent<Props> {
@@ -13,20 +12,18 @@ export class MainView extends React.PureComponent<Props> {
     }
 
     render() : JSX.Element {
-        const { testFieldProp } = this.props;
+        return <MainWrapper>
+            <OptionsWrapper>
+     
+            </OptionsWrapper>
+            <PlayersListWrapper>
+                <PlayersList />
+            </PlayersListWrapper>
+            <ChatWrapper>
 
-        return <div>
-            Main View Here
-            <span>{testFieldProp}</span>
-            <TestComponent />
-        </div>
+            </ChatWrapper>
+        </MainWrapper>
     }
 }
 
-const mapStateToProps = (store : storeType) => {
-    return {
-        testFieldProp: store.testReducer.testField,
-    }
-}
-
-export default connect(mapStateToProps)(MainView);
+export default MainView;
