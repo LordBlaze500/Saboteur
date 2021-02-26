@@ -4,7 +4,7 @@
   "description": "The client for Saboteur game",
   "main": "index.js",
   "scripts": {
-    "start": "yarn build:dev && webpack serve --config webpack.dev.js --host 0.0.0.0 --hot --useLocalIp --port 8000",
+    "start": "yarn build:dev && webpack serve --config webpack.dev.js --host 192.168.0.17 --hot --useLocalIp --port 8000",
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
     "eslint:check": "yarn eslint src/ --ext .ts,.tsx",
