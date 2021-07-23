@@ -6,24 +6,19 @@ interface Props {
     
 }
 
-export class MainView extends React.PureComponent<Props> {
-    constructor(props: Props | Readonly<Props>) {
-        super(props);
-    }
+const MainView = () : JSX.Element => {
+    return <MainWrapper>
+        <OptionsWrapper>
 
-    render() : JSX.Element {
-        return <MainWrapper>
-            <OptionsWrapper>
-     
-            </OptionsWrapper>
-            <PlayersListWrapper>
-                <PlayersList />
-            </PlayersListWrapper>
-            <ChatWrapper>
+        </OptionsWrapper>
+        <PlayersListWrapper>
+            <PlayersList />
+        </PlayersListWrapper>
+        <ChatWrapper>
 
-            </ChatWrapper>
-        </MainWrapper>
-    }
+        </ChatWrapper>
+    </MainWrapper>
 }
 
 export default MainView;
+

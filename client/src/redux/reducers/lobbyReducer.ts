@@ -11,7 +11,7 @@ export interface IState {
 }
 
 const defaultState : IState = {
-    playersList: Map(),
+    playersList: Map([]),
 }
 
 export default function(state : IState = defaultState, action : ActionType) : IState {

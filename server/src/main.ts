@@ -6,7 +6,7 @@ import { Server, Socket } from "socket.io";
 const httpServer = createServer();
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://192.168.0.17:8000",
+        origin: "http://192.168.0.30:8000",
         methods: ["GET", "POST"]
     }
 });
