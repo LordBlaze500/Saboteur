@@ -19,10 +19,8 @@
     "react-dom": "latest",
     "react-redux": "latest",
     "redux": "latest",
-    "redux-saga": "latest",
     "socket.io-client": "latest",
-    "styled-components": "latest",
-    "websocket": "latest"
+    "styled-components": "latest"
   },
   "devDependencies": {
     "@tsconfig/recommended": "latest",

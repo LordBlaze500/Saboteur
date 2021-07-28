@@ -1,14 +1,17 @@
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/rootReducer';
-import rootSaga from './sagas/rootSaga';
+// import { createEpicMiddleware } from 'redux-observable';
+// import { rootEpic } from './epics/rootEpic';
 
-const sagaMiddleware = createSagaMiddleware();
+import initializeSocketListeners from './socketRequests/lobbySocket';
 
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+// const epicMiddleware = createEpicMiddleware();
 
-sagaMiddleware.run(rootSaga);
+const store = createStore(rootReducer);//, applyMiddleware(epicMiddleware));
+
+// epicMiddleware.run(rootEpic);
+
+initializeSocketListeners();
 
 export type storeType = ReturnType<typeof store.getState>;
-export type dispatchType = typeof store.dispatch;
 export default store;
